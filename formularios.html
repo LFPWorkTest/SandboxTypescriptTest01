@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- Fin Bootstrap -->
+  </head>
+
+  <body>
+    <div class="container mt-2" id="formulario">
+      <div id="form1">
+        <h1>Formulario 1</h1>
+        <form>
+          <div class="form-group">
+            <label for="form1input1">Email</label>
+            <input
+              data-bind="value: email"
+              type="email"
+              class="form-control"
+              id="form1input1"
+              placeholder="name@example.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="form1input2">Lista</label>
+            <select
+              class="form-control"
+              id="form1input2"
+              data-bind="options: lista,
+							optionsText: 'text',
+    					optionsValue: 'id'"
+            ></select>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-2">Checkbox</div>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="form1input3"
+                />
+                <label class="form-check-label" for="form1input3">
+                  Prendido
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="form1input4">Readonly</label>
+            <input
+              id="form1input4"
+              class="form-control"
+              type="text"
+              placeholder="Este valor es Readonly..."
+              readonly
+            />
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+            <button class="btn btn-warning mb-2" data-bind="click: abrir">
+              Modal
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div
+        id="modal1"
+        class="modal fade"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLiveLabel"
+        style="display: none; padding-right: 17px;"
+        aria-modal="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLiveLabel">
+                Modal title
+              </h5>
+              <button type="button" class="close" aria-label="Close">
+                <span aria-hidden="true" data-bind="click: cerrar">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Woohoo, you're reading this text in a modal!</p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bind="click: cerrar"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bind="click: guardar"
+              >
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/formulario.ts"></script>
+  </body>
+</html>
